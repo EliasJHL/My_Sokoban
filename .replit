@@ -1,7 +1,7 @@
 language = "c"
-onStart = "apt-get install libncurses5-dev libncursesw5-dev && export CFLAGS=\"$(pkg-config --cflags ncurses)\" && export LDFLAGS=\"$(pkg-config --libs ncurses)\" && make && make clean"
+onStart  = "apt-get install libncurses5-dev libncursesw5-dev && make && make clean"
 run = "./my_sokoban map_demo.txt"
 onStop = "pkill my_sokoban"
 [[hints]]
 regex = "exit status [84]"
-message = "Something was wrong, the program return an error !"  
+message = "Something was wrong, the program return an error !"
