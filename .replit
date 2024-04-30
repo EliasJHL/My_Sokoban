@@ -1,5 +1,5 @@
 language = "c"
-onStart = "make && make clean"
+onStart = "apt-get install libncurses5-dev libncursesw5-dev && make && make clean"
 run = "./my_sokoban map_demo.txt"
 onStop = "pkill my_sokoban"
 [[hints]]
