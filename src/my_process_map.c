@@ -117,10 +117,14 @@ int gen_analyse_map(struct pos_player *p, char **str, struct pos_o *o)
             print_str(str, p, o);
             refresh();
         }
-        if (check_victory(o, str, p) == 1)
+        if (check_victory(o, str, p) == 1) {
+            printf("Victory !\n");
             return 0;
-        if (check_loose(str, p) == 1)
+        }
+        if (check_loose(str, p) == 1) {
+            printf("Game Over :(\n");
             return 1;
+        }
         clear();
         refresh();
     }
