@@ -1,0 +1,7 @@
+language = "c"
+onStart = "make && make clean"
+run = "./my_sokoban map_demo.txt"
+onStop = "pkill my_sokoban"
+[[hints]]
+regex = "exit status [84]"
+message = "Something was wrong, the program return an error !"  
