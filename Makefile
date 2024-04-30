@@ -1,27 +1,35 @@
 ##
 ## EPITECH PROJECT, 2023
-## Makefile
+## Makefile - Elias JHL
 ## File description:
-## lll
+## My_Sokoban
 ##
 
-all:
+NAME	=	my_sokoban
+
+NCURSES	=	-lncurses
+
+CPPFLAGS = -L./ -lmy -I./include
+
+SRCDIR	=	src
+
+SRC	=	$(wildcard $(SRCDIR)/*.c)
+
+OBJ = $(SRC:.c=.o)
+
+all:	$(NAME)
+
+$(NAME): $(OBJ)
 	$(MAKE) -C lib/my
-	gcc -o my_sokoban src/*.c -lncurses -L./ -lmy -I./include
+	$(CC) -o $(NAME) $(OBJ) $(NCURSES) $(CPPFLAGS)
 
 clean:
 	$(MAKE) -C lib/my clean
+	$(RM) src/*.o
 
-fclean:
+fclean: clean
 	$(MAKE) -C lib/my fclean
+	$(RM) $(NAME)
 
 re:
 	$(MAKE) -C lib/my re
-
-coding:
-	.././coding-style.sh . .
-
-rmak:
-	$(MAKE) -C lib/my
-	gcc -o my_sokoban *.c -lncurses -L./ -lmy -I./include
-	$(MAKE) -C lib/my clean
