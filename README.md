@@ -6,6 +6,15 @@
 
 Il s'agit d'une copie du jeu Sokoban, il a été codé en C mais il tourne sur la Ncurses
 
+### Système de map
+
+On peut importer n'importe quelle map, 
+
+ - '#' : Murs
+ - 'X' : Caisses
+ - 'P' : Joueur
+ - 'O' : Destination (de la caisse)
+
 ## Licence
 
 Ce projet est Open Source, toute amélioration ou utilisation est libre.
